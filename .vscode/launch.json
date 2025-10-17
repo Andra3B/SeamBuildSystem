@@ -1,0 +1,15 @@
+{
+    "version": "0.2.0",
+    "configurations": [  
+        {
+            "name": "Debug Seam",
+            "type": "lua-local",
+            "request": "launch",
+            "program": {
+                "lua": "luajit",
+                "communication": "stdio",
+                "file": "${workspaceFolder}/Seam.lua"
+            }
+        },
+    ]
+}
