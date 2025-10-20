@@ -1,0 +1,6 @@
+#ifndef SINGLE_SOURCE_BUILD_HEADER
+#define SINGLE_SOURCE_BUILD_HEADER
+
+#define OUTPUT_MESSAGE "Hello, world!"
+
+#endif

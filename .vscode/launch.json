@@ -9,7 +9,32 @@
                 "lua": "luajit",
                 "communication": "stdio",
                 "file": "${workspaceFolder}/Seam.lua"
-            }
+            },
+			"cwd": "${workspaceFolder}"
         },
+
+		{
+			"name": "Debug SimpleApplication Example",
+			"type": "lua-local",
+			"request": "launch",
+			"program": {
+				"lua": "luajit",
+				"communication": "stdio",
+				"file": "${workspaceFolder}/Examples/SimpleApplication/Build.lua"
+			},
+			"cwd": "${workspaceFolder}/Examples/SimpleApplication"
+		},
+
+		{
+			"name": "Debug Libraries Example",
+			"type": "lua-local",
+			"request": "launch",
+			"program": {
+				"lua": "luajit",
+				"communication": "stdio",
+				"file": "${workspaceFolder}/Examples/Libraries/Build.lua"
+			},
+			"cwd": "${workspaceFolder}/Examples/Libraries"
+		}
     ]
 }
