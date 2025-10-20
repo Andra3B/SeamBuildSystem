@@ -122,4 +122,6 @@ end
 
 Seam.UpdateOptions(arg)
 
+Log.Info(Enum.LogCategory.Seam, "Seam initialised")
+
 return Seam

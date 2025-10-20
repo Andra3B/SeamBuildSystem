@@ -1,11 +1,10 @@
 local Enum = require("Utilities.Enum")
 
 Enum.LogCategory = Enum.Create({
-    Workspace = 1,
+    Seam = 1,
     Application = 2,
 	Option = 3,
-	Library = 4,
-	Global = 5
+	Library = 4
 })
 
 Enum.LogPriority = Enum.Create({

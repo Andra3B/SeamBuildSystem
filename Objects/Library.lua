@@ -13,6 +13,7 @@ end
 function Library:Build()
 	if self._Built then return true end
 
+	Log.Info(Enum.LogCategory.Library, "Building %s", self._Name)
 	local success = FileSystem.Create(self._BuildFolder) and self:PreBuild()
 
 	if success then
@@ -74,7 +75,15 @@ function Library:Build()
 		end
 	end
 
-	return success and self:PostBuild()
+	if success and self:PostBuild() then
+		Log.Info(Enum.LogCategory.Library, "Built %s", self._Name)
+
+		return true
+	else
+		Log.Critical(Enum.LogCategory.Library, "Failed to build %s", self._Name)
+
+		return false
+	end
 end
 
 return Class.CreateClass(Library, "Library", CProject)

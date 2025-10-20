@@ -11,15 +11,13 @@ function Log.SetCategoryPriority(category, priority)
 end
 
 function Log.Format(category, priority, time, message, ...)
-	local categoryString = Enum.LogCategory[category] or "Unknown"
-	local priorityString = ""
-
-	local _priorityString = Enum.LogPriority[priority]
-	if _priorityString then
-		priorityString = _priorityString
-	end
-
-	return string.format("[%s:%s] [%s] "..message.."\n", categoryString, _priorityString, os.date("%H:%M:%S", time), ...)
+	return string.format(
+		"[%s:%s] [%s] "..message.."\n",
+		Enum.LogCategory[category] or "Unknown",
+		string.upper(Enum.LogPriority[priority] or ""),
+		os.date("%H:%M:%S", time),
+		...
+	)
 end
 
 function Log.NewLine()
