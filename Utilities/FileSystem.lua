@@ -79,35 +79,40 @@ end
 
 function FileSystem.GetContents(path, maxDepth, ...)
 	local pathDetails = FileSystem.GetDetails(path)
-
+	
 	if pathDetails.Exists then
 		local contents = {}
-		
-		local wildcardTable = {...}
-		local wildcards = ""
 
-		if #wildcardTable > 0 then
-			wildcards = " \\( "
+		if pathDetails.Type == Enum.PathType.File then
+			table.insert(contents, pathDetails.AbsolutePath)
+		else
+			local wildcardTable = {...}
+			local wildcards = ""
 
-			wildcards = wildcards.."-path \""..wildcardTable[1].."\""
+			if #wildcardTable > 0 then
+				wildcards = " \\( "
 
-			for index = 2, #wildcardTable, 1 do
-				wildcards = wildcards.." -o -path \""..wildcardTable[index].."\""
+				wildcards = wildcards.."-path \""..wildcardTable[1].."\""
+
+				for index = 2, #wildcardTable, 1 do
+					wildcards = wildcards.." -o -path \""..wildcardTable[index].."\""
+				end
+
+				wildcards = wildcards.." \\)"
 			end
 
-			wildcards = wildcards.." \\)"
+			local program = Seam.Execute(
+				"find \""..pathDetails.AbsolutePath.."\" -mindepth 1 "..(type(maxDepth) == "number" and "-maxdepth "..tostring(maxDepth) or "")..wildcards.." -print",
+				Enum.ExecutionMode.Read
+			)
+
+			for line in program:lines() do
+				table.insert(contents, line)
+			end
+
+			program:close()
 		end
 
-		local program = Seam.Execute(
-			"find \""..pathDetails.AbsolutePath.."\" -mindepth 1 "..(type(maxDepth) == "number" and "-maxdepth "..tostring(maxDepth) or "")..wildcards.." -print",
-			Enum.ExecutionMode.Read
-		)
-
-		for line in program:lines() do
-			table.insert(contents, line)
-		end
-
-		program:close()
 		return contents
 	end
 end
