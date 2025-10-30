@@ -4,7 +4,7 @@ package.path = package.path..";../../?.lua"
 require("Seam")
 
 -- Creates a simple application project
-local MainApplication = Application.Create("Main")
+local MainApplication = Seam.BuildSystem.Application.Create("Main")
 
 -- Add the sources files that make up the project
 MainApplication:AddSource("Sources/", nil, "*.c")

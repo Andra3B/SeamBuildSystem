@@ -8,15 +8,17 @@ require("Other.Enums")
 Log = require("Utilities.Log")
 FileSystem = require("Utilities.FileSystem")
 
-Object = require("Objects.Object")
-
-Project = require("Objects.Project")
-CProject = require("Objects.CProject")
-
-Application = require("Objects.Application")
-Library = require("Objects.Library")
-
 Seam = {}
+
+Seam.BuildSystem = {
+	Object = require("Objects.Object"),
+
+	Project = require("Objects.Project"),
+	CProject = require("Objects.CProject"),
+
+	Application = require("Objects.Application"),
+	Library = require("Objects.Library")
+}
 
 Seam.Options = {
 	gcc = {
