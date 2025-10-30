@@ -1,3 +1,4 @@
+local CProject = require("Objects.CProject")
 local Application = {}
 
 function Application.Create(name)

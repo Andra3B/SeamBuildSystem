@@ -4,10 +4,10 @@ package.path = package.path..";../../?.lua"
 require("Seam")
 
 -- Creates the application project
-local MainApplication = Application.Create("Main")
+local MainApplication = Seam.BuildSystem.Application.Create("Main")
 
 -- Creates the static library project
-local MathLibrary = Library.Create("Maths")
+local MathLibrary = Seam.BuildSystem.Library.Create("Maths")
 
 -- Add the sources files that make up the application project
 MainApplication:AddSource("Application/App.c")
