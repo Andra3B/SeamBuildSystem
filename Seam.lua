@@ -1,3 +1,5 @@
+package.path = package.path..";./Seam/?.lua"
+
 Class = require("Utilities.Class")
 
 Enum = require("Utilities.Enum")
@@ -7,6 +9,9 @@ Log = require("Utilities.Log")
 FileSystem = require("Utilities.FileSystem")
 
 Object = require("Objects.Object")
+
+Project = require("Objects.Project")
+CProject = require("Objects.CProject")
 
 Application = require("Objects.Application")
 Library = require("Objects.Library")

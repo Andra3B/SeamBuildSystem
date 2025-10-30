@@ -1,5 +1,3 @@
-local Project = require("Objects.Project")
-
 local CProject = {}
 
 function CProject.Create(name)

@@ -1,5 +1,3 @@
-local CProject = require("Objects.CProject")
-
 local Library = {}
 
 function Library.Create(name)
