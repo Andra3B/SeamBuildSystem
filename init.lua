@@ -1,3 +1,5 @@
+package.path = package.path..";./Seam/?.lua"
+
 Class = require("Utilities.Class")
 
 Enum = require("Utilities.Enum")
