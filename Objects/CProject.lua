@@ -1,4 +1,4 @@
-local Project = require("Objects.Project")
+local Project = require("Seam.Objects.Project")
 local CProject = {}
 
 function CProject.Create(name)

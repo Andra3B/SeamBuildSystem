@@ -1,4 +1,4 @@
-local CProject = require("Objects.CProject")
+local CProject = require("Seam.Objects.CProject")
 local Library = {}
 
 function Library.Create(name)

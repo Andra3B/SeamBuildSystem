@@ -1,23 +1,21 @@
-package.path = package.path..";./Seam/?.lua"
+Class = require("Seam.Utilities.Class")
 
-Class = require("Utilities.Class")
+Enum = require("Seam.Utilities.Enum")
+require("Seam.Utilities.Enums")
 
-Enum = require("Utilities.Enum")
-require("Other.Enums")
-
-Log = require("Utilities.Log")
-FileSystem = require("Utilities.FileSystem")
+Log = require("Seam.Utilities.Log")
+FileSystem = require("Seam.Utilities.FileSystem")
 
 Seam = {}
 
 Seam.BuildSystem = {
-	Object = require("Objects.Object"),
+	Object = require("Seam.Objects.Object"),
 
-	Project = require("Objects.Project"),
-	CProject = require("Objects.CProject"),
+	Project = require("Seam.Objects.Project"),
+	CProject = require("Seam.Objects.CProject"),
 
-	Application = require("Objects.Application"),
-	Library = require("Objects.Library")
+	Application = require("Seam.Objects.Application"),
+	Library = require("Seam.Objects.Library")
 }
 
 Seam.Options = {

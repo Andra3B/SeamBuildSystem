@@ -1,4 +1,4 @@
-local Object = require("Objects.Object")
+local Object = require("Seam.Objects.Object")
 local Project = {}
 
 local projects = setmetatable({}, {__mode = "v"})
